@@ -1,0 +1,22 @@
+/* son bloques de propiedades y valores que podemos generar y 
+repetir a los largo de todo el proyecto */
+@mixin flex($direction,$wrap,$content,$items,$gap){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $content;
+    align-items: $items;
+    gap: $gap;
+}
+
+/*@mixin grid($col,$row,$gap,$areas,$content,$align){*/
+@mixin grid($col,$row,$gap,$content,$align){
+    display: grid;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    gap: $gap;
+    /*grid-template-areas: $areas;*/
+    justify-content: $content;
+    align-content: $align;
+}
+

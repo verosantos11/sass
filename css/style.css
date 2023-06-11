@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/* PRIMERO se declaran las variables y mixins */ /* Variables */ /* son bloques de propiedades y valores que podemos generar y 
+repetir a los largo de todo el proyecto */
+/*@mixin grid($col,$row,$gap,$areas,$content,$align){*/
+header {
+  width: 100%;
+  background-color: darkslategray;
+  color: white;
+}
+header a {
+  color: white;
+}
+
+.header-top, .header-bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+}
+
+.header-top {
+  border-bottom: 1px solid white;
+}
+
+.header-bottom {
+  align-items: end;
+}
+
+.header-info, .header-social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  list-style: none;
+}
+
+.header-social img {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.menu-ppal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+main {
+  background-color: lightblue;
+}
+
+.contenedor {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido {
+  max-width: 120rem;
+  width: 100%;
+}
+
+.titulo-pagina {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 22rem 0px 8rem 0px;
+  background-position: center center;
+}
+.titulo-pagina h1 {
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: #272727;
+  padding: 1rem 2rem;
+  background-color: #f6f6fc;
+  font-size: 1.5rem;
+  height: 5rem;
+  border-bottom: 1px solid #e2e2e5;
+}
+.breadcrumb a {
+  color: #272727;
+}
+
+.galeria-de-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5rem;
+  /*grid-template-areas: $areas;*/
+  justify-content: center;
+  align-content: center;
+  max-width: 122rem;
+  width: 100%;
+  padding: 2rem;
+}
+.galeria-de-3 img {
+  /*max-width: 30rem;
+  max-height: 20rem;*/
+  object-fit: cover;
+  width: 32rem;
+  height: 22rem;
+}
+.galeria-de-3 h3 {
+  text-align: center;
+}
+
+.galeria-de-2 {
+  max-width: 122rem;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  /*grid-template-areas: $areas;*/
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  /*grid-template-areas: ;*/
+  padding: 2rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+}
+
+footer {
+  background-color: #002B5B;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+footer img {
+  width: 30rem;
+  height: 10rem;
+}
+footer a {
+  color: white;
+}
+footer li {
+  list-style: none;
+}
+
+/* A LO ULTIMO */
+/* Dispositivos móviles */
+@media (max-width: 426px) {
+  .header-bottom, .header-top {
+    font-size: 1rem;
+    font-weight: 100;
+  }
+  .header-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-info {
+    display: none;
+  }
+  .breadcrumb {
+    font-size: 1rem;
+    font-weight: 100;
+  }
+  .galeria-de-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+  }
+  .galeria-de-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer h3 {
+    font-weight: 200;
+  }
+}
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1024px) {
+  .contenido {
+    max-width: 80rem;
+    width: 100%;
+  }
+  .galeria-de-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /*grid-template-areas: ;*/
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 1 rem = 16 px */
+  font-size: 62.5%; /* acá hacemos que 1 rem sea igual a 10 px .. 1 rem = 10 px */
+  /* usar siempre relativas (rem) para poder hacerlo responsive */
+  /* rem se usa más para tipografías */
+  /* em se usa más para lo que es el código */
+  font-family: Poppins;
+}
+
+/*# sourceMappingURL=style.css.map */

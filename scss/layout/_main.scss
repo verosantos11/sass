@@ -1,0 +1,67 @@
+main{
+    background-color: lightblue;
+}
+
+.contenedor{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido{
+    max-width: 120rem;
+    width: 100%;
+}
+
+.titulo-pagina{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 22rem 0px 8rem 0px;
+    background-position: center center;
+    h1{
+        font-size: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+.breadcrumb{
+    @include flex(row,wrap,flex-start,center,0.5rem);
+    color: #272727;
+    padding: 1rem 2rem; 
+    background-color: #f6f6fc;
+    font-size: 1.5rem;
+    height: 5rem;
+    border-bottom: 1px solid #e2e2e5;
+    a{
+        color: #272727;
+    }
+}
+
+.galeria-de-3{
+    @include grid(repeat(3,1fr),repeat(3,1fr),5rem,center,center);
+    max-width: 122rem;
+    width: 100%;
+    padding: 2rem;
+    img{
+        /*max-width: 30rem;
+        max-height: 20rem;*/
+        object-fit: cover;
+        width: 32rem;
+        height: 22rem;
+    }
+    h3{
+        text-align: center;
+    }
+}
+
+.galeria-de-2{
+    max-width: 122rem;
+    @include grid(35% 65%,1fr,5rem,center,center);
+    width: 100%;
+    /*grid-template-areas: ;*/
+    padding: 2rem;
+}
+
+.formulario{
+    @include flex(column,wrap,flex-start,start,1rem);
+}
