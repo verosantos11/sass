@@ -1,5 +1,5 @@
 main{
-    background-color: lightblue;
+    /*background-color: lightblue;*/
 }
 
 .contenedor{
@@ -37,7 +37,7 @@ main{
     }
 }
 
-.galeria-de-3{
+.galeria-de-3x3{
     @include grid(repeat(3,1fr),repeat(3,1fr),5rem,center,center);
     max-width: 122rem;
     width: 100%;
@@ -52,6 +52,13 @@ main{
     h3{
         text-align: center;
     }
+}
+
+.galeria-de-3x1{
+    @include grid(repeat(3,1fr),1fr,5rem,center,center);
+    max-width: 122rem;
+    width: 100%;
+    padding: 2rem;
 }
 
 .galeria-de-2{

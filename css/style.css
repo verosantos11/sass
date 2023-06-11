@@ -56,7 +56,7 @@ header a {
 }
 
 main {
-  background-color: lightblue;
+  /*background-color: lightblue;*/
 }
 
 .contenedor {
@@ -100,7 +100,7 @@ main {
   color: #272727;
 }
 
-.galeria-de-3 {
+.galeria-de-3x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -112,15 +112,28 @@ main {
   width: 100%;
   padding: 2rem;
 }
-.galeria-de-3 img {
+.galeria-de-3x3 img {
   /*max-width: 30rem;
   max-height: 20rem;*/
   object-fit: cover;
   width: 32rem;
   height: 22rem;
 }
-.galeria-de-3 h3 {
+.galeria-de-3x3 h3 {
   text-align: center;
+}
+
+.galeria-de-3x1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  /*grid-template-areas: $areas;*/
+  justify-content: center;
+  align-content: center;
+  max-width: 122rem;
+  width: 100%;
+  padding: 2rem;
 }
 
 .galeria-de-2 {
