@@ -37,6 +37,15 @@ main{
     }
 }
 
+.fondo-azul{
+    background-color: $fondo-azul;
+    color: white;
+}
+
+.fondo-gris{
+    background-color: $fondo-gris;
+}
+
 .galeria-de-3x3{
     @include grid(repeat(3,1fr),repeat(3,1fr),5rem,center,center);
     max-width: 122rem;
@@ -67,6 +76,16 @@ main{
     width: 100%;
     /*grid-template-areas: ;*/
     padding: 2rem;
+}
+
+.galeria-de-clientes{
+    @include grid(repeat(6,1fr),1fr,5rem,center,center);
+    max-width: 122rem;
+    width: 100%;
+    padding: 2rem;
+    img{
+        max-width: 12rem;
+    }
 }
 
 .formulario{

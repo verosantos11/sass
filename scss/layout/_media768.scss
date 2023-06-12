@@ -3,4 +3,16 @@
         flex-direction: column;
         align-items: center;
     }
+    
+    .galeria-de-3x3{
+        display: grid; 
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(5,1fr);
+    }
+
+    .galeria-de-clientes{
+        display: grid; 
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
 }

@@ -3,10 +3,10 @@
         max-width: 80rem;
         width: 100%;
     }
-    .galeria-de-3{
+    .galeria-de-3x1{
         display: grid; 
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(5,1fr);
+        grid-template-rows: repeat(2,1fr);
         /*grid-template-areas: ;*/
     }
 }

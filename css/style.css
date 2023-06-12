@@ -100,6 +100,15 @@ main {
   color: #272727;
 }
 
+.fondo-azul {
+  background-color: #1A5F7A;
+  color: white;
+}
+
+.fondo-gris {
+  background-color: #F2F2F2;
+}
+
 .galeria-de-3x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -150,6 +159,22 @@ main {
   padding: 2rem;
 }
 
+.galeria-de-clientes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  /*grid-template-areas: $areas;*/
+  justify-content: center;
+  align-content: center;
+  max-width: 122rem;
+  width: 100%;
+  padding: 2rem;
+}
+.galeria-de-clientes img {
+  max-width: 12rem;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -184,6 +209,34 @@ footer li {
 }
 
 /* A LO ULTIMO */
+@media (max-width: 1024px) {
+  .contenido {
+    max-width: 80rem;
+    width: 100%;
+  }
+  .galeria-de-3x1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /*grid-template-areas: ;*/
+  }
+}
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .galeria-de-3x3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .galeria-de-clientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
 /* Dispositivos móviles */
 @media (max-width: 426px) {
   .header-bottom, .header-top {
@@ -201,14 +254,19 @@ footer li {
     font-size: 1rem;
     font-weight: 100;
   }
-  .galeria-de-3 {
+  .galeria-de-3x1 {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
   .galeria-de-2 {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+  }
+  .galeria-de-clientes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
   footer {
     flex-direction: column;
@@ -216,24 +274,6 @@ footer li {
   }
   footer h3 {
     font-weight: 200;
-  }
-}
-@media (max-width: 768px) {
-  .header-top {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 1024px) {
-  .contenido {
-    max-width: 80rem;
-    width: 100%;
-  }
-  .galeria-de-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    /*grid-template-areas: ;*/
   }
 }
 * {
