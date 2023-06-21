@@ -4,20 +4,43 @@ header{
     color: white;
     a{
         color: white;
+        text-decoration: none;
+    }
+    a:hover{
+        color: $color-secundario;
     }
 }
-.header-top, .header-bottom{
+.contenedor-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido-header{
+    max-width: 120rem;
+    width: 100%;
+}
+.header-gral{
     @include flex(row,wrap,space-between,center,2rem);
     font-size: 1.5rem;
     font-weight: 300;
-    padding: 1rem 2rem;
+    i{
+        padding-right: 1rem;
+    }
 } 
+
 .header-top{
+    @extend .header-gral;
     border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 .header-bottom{
+    @extend .header-gral;
     align-items: end;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
+
 .header-info, .header-social {
     @include flex(row,wrap,space-between,center,4rem);
     list-style: none;

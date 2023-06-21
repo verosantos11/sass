@@ -9,4 +9,13 @@
         grid-template-rows: repeat(2,1fr);
         /*grid-template-areas: ;*/
     }
+    .galeria-de-3x2{
+        display: grid; 
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+    .img2-en-1-col{
+        @include grid(repeat(1,1fr),1fr,5rem,center,center);
+        justify-items: center;
+    }
 }

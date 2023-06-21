@@ -1,5 +1,11 @@
 main{
     /*background-color: lightblue;*/
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    h1,h2,h3{
+        font-family: Poppins;
+    }
 }
 
 .contenedor{
@@ -11,6 +17,7 @@ main{
 .contenido{
     max-width: 120rem;
     width: 100%;
+    padding: 2rem;
 }
 
 .titulo-pagina{
@@ -46,11 +53,8 @@ main{
     background-color: $fondo-gris;
 }
 
-.galeria-de-3x3{
-    @include grid(repeat(3,1fr),repeat(3,1fr),5rem,center,center);
-    max-width: 122rem;
-    width: 100%;
-    padding: 2rem;
+.galeria-de-3x2{
+    @include grid(repeat(3,1fr),repeat(2,1fr),5rem,center,center);
     img{
         /*max-width: 30rem;
         max-height: 20rem;*/
@@ -65,24 +69,19 @@ main{
 
 .galeria-de-3x1{
     @include grid(repeat(3,1fr),1fr,5rem,center,center);
-    max-width: 122rem;
-    width: 100%;
-    padding: 2rem;
 }
 
 .galeria-de-2{
-    max-width: 122rem;
-    @include grid(35% 65%,1fr,5rem,center,center);
-    width: 100%;
-    /*grid-template-areas: ;*/
-    padding: 2rem;
+    @include grid(45% 55%,1fr,5rem,center,center);
+    justify-items: center;
+}
+.img2-en-1-col{
+    @include grid(repeat(2,1fr),1fr,5rem,center,center);
+    justify-items: center;
 }
 
 .galeria-de-clientes{
     @include grid(repeat(6,1fr),1fr,5rem,center,center);
-    max-width: 122rem;
-    width: 100%;
-    padding: 2rem;
     img{
         max-width: 12rem;
     }

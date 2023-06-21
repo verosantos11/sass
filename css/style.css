@@ -1,5 +1,12 @@
 @charset "UTF-8";
-/* PRIMERO se declaran las variables y mixins */ /* Variables */ /* son bloques de propiedades y valores que podemos generar y 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PRIMERO se declaran las variables y mixins */
+/* Variables */ /* son bloques de propiedades y valores que podemos generar y 
 repetir a los largo de todo el proyecto */
 /*@mixin grid($col,$row,$gap,$areas,$content,$align){*/
 header {
@@ -9,9 +16,24 @@ header {
 }
 header a {
   color: white;
+  text-decoration: none;
+}
+header a:hover {
+  color: #57C5B6;
 }
 
-.header-top, .header-bottom {
+.contenedor-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-header {
+  max-width: 120rem;
+  width: 100%;
+}
+
+.header-gral, .header-bottom, .header-top {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,15 +42,21 @@ header a {
   gap: 2rem;
   font-size: 1.5rem;
   font-weight: 300;
-  padding: 1rem 2rem;
+}
+.header-gral i, .header-bottom i, .header-top i {
+  padding-right: 1rem;
 }
 
 .header-top {
   border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .header-bottom {
   align-items: end;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .header-info, .header-social {
@@ -57,6 +85,12 @@ header a {
 
 main {
   /*background-color: lightblue;*/
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+main h1, main h2, main h3 {
+  font-family: Poppins;
 }
 
 .contenedor {
@@ -69,6 +103,7 @@ main {
 .contenido {
   max-width: 120rem;
   width: 100%;
+  padding: 2rem;
 }
 
 .titulo-pagina {
@@ -109,10 +144,10 @@ main {
   background-color: #F2F2F2;
 }
 
-.galeria-de-3x3 {
+.galeria-de-3x2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 5rem;
   /*grid-template-areas: $areas;*/
   justify-content: center;
@@ -121,14 +156,14 @@ main {
   width: 100%;
   padding: 2rem;
 }
-.galeria-de-3x3 img {
+.galeria-de-3x2 img {
   /*max-width: 30rem;
   max-height: 20rem;*/
   object-fit: cover;
   width: 32rem;
   height: 22rem;
 }
-.galeria-de-3x3 h3 {
+.galeria-de-3x2 h3 {
   text-align: center;
 }
 
@@ -146,17 +181,31 @@ main {
 }
 
 .galeria-de-2 {
-  max-width: 122rem;
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 45% 55%;
   grid-template-rows: 1fr;
   gap: 5rem;
   /*grid-template-areas: $areas;*/
   justify-content: center;
   align-content: center;
+  max-width: 122rem;
   width: 100%;
-  /*grid-template-areas: ;*/
   padding: 2rem;
+  justify-items: center;
+}
+
+.img2-en-1-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  /*grid-template-areas: $areas;*/
+  justify-content: center;
+  align-content: center;
+  max-width: 122rem;
+  width: 100%;
+  padding: 2rem;
+  justify-items: center;
 }
 
 .galeria-de-clientes {
@@ -195,7 +244,7 @@ footer {
   padding: 2rem;
   color: white;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 footer img {
   width: 30rem;
@@ -203,6 +252,10 @@ footer img {
 }
 footer a {
   color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #57C5B6;
 }
 footer li {
   list-style: none;
@@ -220,21 +273,40 @@ footer li {
     grid-template-rows: repeat(2, 1fr);
     /*grid-template-areas: ;*/
   }
+  .galeria-de-3x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .img2-en-1-col {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    gap: 5rem;
+    /*grid-template-areas: $areas;*/
+    justify-content: center;
+    align-content: center;
+    max-width: 122rem;
+    width: 100%;
+    padding: 2rem;
+    justify-items: center;
+  }
 }
 @media (max-width: 768px) {
   .header-top {
     flex-direction: column;
     align-items: center;
   }
-  .galeria-de-3x3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  .galeria-de-2 {
+    grid-template-columns: 1fr;
   }
   .galeria-de-clientes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+  }
+  footer {
+    align-items: flex-start;
   }
 }
 /* Dispositivos móviles */
@@ -259,9 +331,10 @@ footer li {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
-  .galeria-de-2 {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+  .galeria-de-3x2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
   }
   .galeria-de-clientes {
     display: grid;
@@ -270,18 +343,11 @@ footer li {
   }
   footer {
     flex-direction: column;
-    align-items: center;
   }
   footer h3 {
     font-weight: 200;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   /* 1 rem = 16 px */
   font-size: 62.5%; /* acá hacemos que 1 rem sea igual a 10 px .. 1 rem = 10 px */

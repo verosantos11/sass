@@ -1,3 +1,4 @@
+@import "./base/reset";
 /* PRIMERO se declaran las variables y mixins */
 @import "./utilities/variables";
 @import "./utilities/mixins";
@@ -10,12 +11,6 @@
 @import "./layout/media768";
 @import "./layout/media426";
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html{
     /* 1 rem = 16 px */
